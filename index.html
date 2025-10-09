@@ -21,6 +21,11 @@
     </nav>
   </header>
 
+  <!-- Top Rotating Video Ad -->
+  <div id="top-video-ad" style="text-align:center; margin:20px 0;">
+    <!-- JS will insert video here -->
+  </div>
+
   <section id="flashback">
     <h2>వై.ఎస్. జగన్</h2>
     <p>
@@ -75,5 +80,23 @@
   <footer>
     <p>&copy; 2025 AJAY_PREM_KUMAR</p>
   </footer>
+
+  <!-- Script for Rotating Top Video Ads -->
+  <script>
+    const topAds = [
+      { src: "videos/Jagan_ad.mp4", link: "https://yourlink1.com" },
+      { src: "videos/Jagan_ad1.mp4", link: "https://yourlink2.com" }
+    ];
+
+    const randomAd = topAds[Math.floor(Math.random() * topAds.length)];
+    document.getElementById("top-video-ad").innerHTML = `
+      <a href="${randomAd.link}" target="_blank">
+        <video autoplay muted loop playsinline style="max-width:100%; height:auto; border:1px solid #ccc; border-radius:5px;">
+          <source src="${randomAd.src}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </a>
+    `;
+  </script>
 </body>
 </html>
